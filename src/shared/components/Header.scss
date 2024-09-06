@@ -1,0 +1,149 @@
+@import "../assets/style/variable.scss";
+@import "../assets/style/mixin.scss";
+.header-section {
+  padding: 10px 0;
+  background-color: #000;
+  position: relative;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .signup {
+    display: none;
+  }
+  .hamburger {
+    border: 0;
+    background-color: transparent;
+    transition: all 0.5s;
+    .bar {
+      background-color: $white;
+      height: 3px;
+      width: 23px;
+      margin-bottom: 3px;
+      display: block;
+      transition: all 0.5s;
+    }
+    &.active-class {
+      .middle-bar {
+        opacity: 0;
+      }
+      :nth-child(1) {
+        transform: translateY(1px) rotate(45deg);
+      }
+      :nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+      }
+    }
+  }
+  .navigation-menu {
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    transition: all 0.5s;
+    &.active-menu {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 100%;
+      padding: 10px;
+    }
+    .menu-list {
+      li {
+        margin-bottom: 15px;
+        a {
+          color: $white;
+          font-weight: $semi-bold;
+        }
+      }
+    }
+  }
+}
+.show-popup {
+  position: relative;
+  .popup-section {
+    display: block;
+    .container-field {
+      display: block;
+    }
+  }
+}
+@media all and (min-width:$screen-md) {
+  .header-section {
+    .container {
+      align-items: flex-start;
+    }
+    .hamburger {
+      display: none;
+    }
+    .login-wrap{
+        display: flex;
+    }
+    .menu-wrap {
+      display: flex;
+      justify-content: space-between;
+      width: 83%;
+      margin-top: 5px;
+      align-items: baseline;
+    }
+    .navigation-menu {
+      display: flex;
+      &.active-menu {
+        position: static;
+        width: auto;
+      }
+      .menu-list {
+        display: flex;
+        align-items: center;
+        li {
+          margin-right: 15px;
+          padding: 12px 3px 19px;
+          margin-bottom: 0;
+          &.active {
+            border-bottom: 3px solid #F29100;
+          }
+        }
+      }
+    }
+    .signup {
+      display: flex;
+      color: $white;
+      border: 1px solid $white;
+      border-radius: 10px;
+      padding: 12px 20px;
+      letter-spacing: 1.2px;
+      font-weight: $semi-bold;
+      transition: all 0.5s;
+      background-color: transparent;
+      margin-right: 10px;
+      cursor: pointer;
+      &:hover {
+        background: #D19700;
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        color: $white !important;
+      }
+    }
+  }
+}
+@media all and (min-width:$screen-custom) {
+  .header-section {
+    padding: 15px 0;
+    .menu-wrap {
+      width: 67.3%;
+    }
+    .navigation-menu {
+      .menu-list {
+        li {
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+  // Banner styling
+  .banner-section {
+    h1 {
+      @include fontsize(50px);
+    }
+  }
+}

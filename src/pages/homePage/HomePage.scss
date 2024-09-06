@@ -1,0 +1,604 @@
+@import "../../shared/assets/style/variable.scss";
+@import "../../shared/assets/style/mixin.scss";
+
+// scale section
+.scale-section {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 50px 0;
+
+    .scale-heading {
+        text-align: center;
+
+        h2 {
+            @include fontsize(20px);
+            margin-bottom: 5px;
+        }
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px;
+        border: 1px solid transparent;
+        background-color: #D19700;
+        color: #fff;
+        margin-right: 15px;
+        transition: all 0.5s;
+    }
+
+    .scale-content {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 25px 10px;
+        border-radius: 12px;
+        max-width: 400px;
+        margin: 0 auto 20px;
+    }
+
+    // scale section end
+}
+
+// create account 
+.create-account {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 50px 0;
+
+    .account {
+        padding: 50px 0 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            @include widthheight(100%, 100%);
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            background: url('../../shared/assets/images/circle.png') no-repeat center top;
+            background-size: contain;
+            z-index: 999;
+        }
+
+        &::after {
+            @include widthheight(100%, 100%);
+            position: absolute;
+            top: -30%;
+            left: 0%;
+            background: url('../../shared/assets/images/account-circle.png') no-repeat;
+        }
+
+        h3 {
+            @include fontsize(18px);
+            margin-bottom: 5px;
+            font-weight: $semi-bold;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .details-info {
+            position: relative;
+            padding-left: 25px;
+            padding-bottom: 20px;
+            z-index: 999;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -5px;
+                @include widthheight(20px, 100%);
+                background: url('../../shared/assets/images/line-img.svg') no-repeat center top;
+                background-size: contain;
+            }
+        }
+
+        .details {
+            margin-bottom: 22px;
+        }
+    }
+
+    .how-to-start {
+        h2 {
+            @include fontsize(20px);
+        }
+    }
+}
+
+// create account 
+// security section
+.security-section {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 50px 0;
+    h3 {
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 15px;
+        border: 1px solid transparent;
+        background-color: $primary-color;
+        color: $white;
+        margin-right: 15px;
+        transition: all 0.5s;
+
+        &:hover {
+            background: $black;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            color: $white !important;
+        }
+    }
+
+    .security-details {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .security-img {
+        max-width: 50%;
+        margin: 0 auto;
+        position: relative;
+
+        &::after {
+            content: '';
+            @include widthheight(100%, 100%);
+            position: absolute;
+            top: 44%;
+            right:-10%;
+            left: auto;
+            background: url(../../shared/assets/images/star.png) no-repeat center center;
+            background-size: cover;
+            opacity: 0.8;
+        }
+
+        img {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
+}
+
+// security section
+// Ecosytem 
+.ecosystem {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 50px 0;
+     overflow: hidden;
+    .ecosystem-img {
+        position: relative;
+        z-index: 9;
+        margin-bottom: 30px;
+
+        img {
+            width: 100%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 2%;
+            top: -134%;
+            width: 850px;
+            height: 1000px;
+            background: url(../../shared/assets/images/map-circle.png) no-repeat center top;
+            z-index: -9;
+        }
+    }
+
+    .ecosystem-details {
+        position: relative;
+        z-index: 999;
+        h3 {
+            line-height: 1.5;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        .counter-wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .counter {
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 33%;
+
+            .total {
+                @include fontsize(20px);
+                margin-bottom: 10px;
+            }
+
+            .sm-text {
+                @include fontsize(11px);
+            }
+        }
+    }
+}
+
+// Ecosytem 
+@media all and (min-width:$screen-md) {
+    .scale-section {
+        .scale-details {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .scale-content {
+                width: 45%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    // account
+    .create-account {
+        overflow: hidden;
+        .account {
+            max-width: 738px;
+            margin: 0 auto;
+            &::after {
+                content: '';
+                top: -29%;
+                left: 11%;
+                @include widthheight(700px,600px);
+            }
+
+            .details-info {
+                width: 48%;
+                margin-left: auto;
+
+                &::before {
+                    left: -22px;
+                }
+            }
+
+            .details {
+                max-width: 300px;
+
+                &:nth-child(2) {
+                    position: relative;
+                    left: -99%;
+                }
+            }
+        }
+    }
+
+    // account
+    // security section
+    .security-section {
+        h3 {
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .security-details {
+            width: 55%;
+            text-align: left;
+        }
+
+        .security-img {
+            width: 40%;
+            margin: 0;
+
+            &::after {
+                top: -22%;
+            }
+        }
+    }
+
+    // security section
+    // Ecosytem 
+    .ecosystem {
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ecosystem-img {
+            width: 48%;
+        }
+
+        .ecosystem-details {
+            width: 48%;
+
+            .counter {
+                width: 33%;
+                .total{
+                    @include fontsize(25px);
+                }
+            }
+        }
+    }
+
+    // Ecosytem 
+}
+
+@media all and (min-width:$screen-custom) {
+    .scale-section {
+        .scale-heading {
+            margin-bottom: 50px;
+
+            h2 {
+                @include fontsize(50px);
+            }
+        }
+
+        .scale-details {
+            .scale-content {
+                width: 23%;
+
+                p {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    // create account
+    .create-account {
+        .container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+
+        .account {
+            width: 100%;
+            max-width: 100%;
+
+            &::before {
+                left: -6%;
+            }
+
+            &::after {
+                top: -2%;
+                left: 10%;
+                @include widthheight(638px, 629px);
+            }
+
+            .details-info {
+                width: 54%;
+
+                &::before {
+                    width: 23px;
+                }
+            }
+
+            .details {
+                &:nth-child(2) {
+                    left: -82%;
+                }
+            }
+        }
+
+        .how-to-start {
+            width: 48%;
+        }
+    }
+
+    // security 
+    .security-section {
+        padding: 41px 0;
+
+        .security-img {
+            img {
+                width: 100%;
+                max-width: 295px;
+            }
+
+            &::after {
+                @include widthheight(600px, 680px);
+                top: -50%;
+            }
+        }
+
+        .security-details {
+            width: 45%;
+            padding-left: 31px;
+
+            .btn {
+                font-size: 1rem;
+                font-weight: 600;
+                padding: 22px 24px;
+                margin-right: 27px;
+            }
+
+            h3 {
+                max-width: 100%;
+                line-height: 1.3;
+            }
+
+            p {
+                @include fontsize(16px);
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // ecosystem
+    .ecosystem {
+        padding: 223px 0 122px;
+
+        .ecosystem-details {
+            width: 47%;
+            padding: 10px 0;
+
+            h3 {
+                line-height: 1.4;
+                margin-bottom: 19px;
+            }
+
+            p {
+                @include fontsize(16px);
+            }
+
+            .counter {
+                align-items: baseline;
+                width: 31%;
+
+                .total {
+                    @include fontsize(40px);
+                }
+            }
+        }
+    }
+
+    // our team styling
+    .our-team {
+        padding: 141px 0 101px;
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 75%;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+@media all and (min-width:$screen-xxl) {
+    .scale-section {
+        padding: 76px 0;
+
+        .scale-heading {
+            margin-bottom: 56px;
+
+            h2 {
+                line-height: 1.2;
+                margin-bottom: 2px;
+            }
+
+            p {
+                @include fontsize(16px);
+                margin-top: 26px;
+                letter-spacing: 0.1px;
+            }
+        }
+
+        .scale-img {
+            margin-bottom: 18px;
+        }
+
+        .scale-content p {
+            padding: 0 11px;
+            margin-right: 11px;
+        }
+    }
+
+    // create account styling
+    .create-account {
+        padding: 11px 0 213px;
+
+        .account {
+            width: 56%;
+            padding: 15px;
+
+            h3 {
+                @include fontsize(24px);
+                font-weight: $bold;
+                margin-bottom: 10px;
+            }
+
+            &::after {
+                left: 0;
+                top: -2%;
+            }
+
+            p {
+                max-width: 100%;
+                @include fontsize(14px);
+                font-weight: $light ;
+                letter-spacing: -0.1px;
+            }
+
+            .details-info {
+                width: 52.3%;
+                margin-left: auto;
+                padding-top: 160px;
+                padding-left: 10px;
+
+                &::before {
+                    width: 20px;
+                    top: 31%;
+                }
+            }
+
+            .details {
+                max-width: 328px;
+                margin-bottom: 45px;
+
+                &:nth-child(2) {
+                    left: -110%;
+                    top: 6px;
+                }
+            }
+        }
+
+        .how-to-start {
+            width: 38.6%;
+            padding-top: 165px;
+
+            h2 {
+                @include fontsize(50px);
+                margin-bottom: 36px;
+            }
+
+            p {
+                margin-bottom: 26px;
+            }
+        }
+    }
+
+    .security-section {
+        .security-img {
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .security-details {
+            h3 {
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin-bottom: 36px;
+            }
+        }
+    }
+
+    // our team 
+    .our-team {
+        padding: 36px 0 156px;
+
+        h3 {
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-bottom: 73px;
+        }
+    }
+
+    // community
+    .our-community {
+        padding: 63px 0 125px;
+
+        h3 {
+            margin-bottom: 38px;
+        }
+    }
+}

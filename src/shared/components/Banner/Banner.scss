@@ -1,0 +1,103 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/mixin.scss";
+.banner-section {
+    background: url('../../assets/images/banner-bg.png') no-repeat center center;
+    background-size: cover;
+    padding: 25px 0;
+    h1 {
+        @include fontsize(20px);
+        margin-bottom: 25px;
+        line-height: 1.4;
+    }
+    .banner-content {
+        margin-bottom: 20px;
+        text-align: center;
+        .btn {
+            display: inline-block;
+            padding: 15px;
+            border: 1px solid transparent;
+            background-color: #D19700;
+            color: $white;
+            margin-right: 15px;
+            margin-bottom: 15px;
+           transition: all 0.5s;
+            &:hover {
+                background: #000000;
+                border: 1px solid rgba(255, 255, 255, 0.55);
+                color: $white!important;
+            }
+        }
+        .btn-secondary {
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            &:hover {
+                background-color: #D19700;
+                color: $white;
+            }
+        }
+    }
+    .banner-img {
+        text-align: center;
+        img {
+            max-width: 200px;
+        }
+    }
+}
+@media all and (min-width:$screen-md) {
+    .banner-section {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner-content {
+            width: 40%;
+            text-align: left;
+            .btn-wrap{
+                display: flex;
+            }
+            .btn{
+                white-space: nowrap;
+            }
+        }
+    }
+    .banner-img {
+        img {
+            max-width: 300px;
+        }
+    }
+}
+@media all and (min-width:$screen-custom) {
+    .banner-section {
+        h1 {
+            @include fontsize(48px);
+        }
+        .banner-img img {
+            max-width: 490px;
+        }
+    }
+}
+@media all and (min-width:$screen-xxl) {
+    .banner-section {
+        padding: 111px 0 50px;
+        h1 {
+            @include fontsize(50px);
+            margin-bottom: 45px;
+        }
+        .banner-content {
+            margin-top: 44px;
+            .btn {
+                @include fontsize(16px);
+                font-weight: $semi-bold;
+                padding: 22px 24px;
+                margin-right: 27px;
+            }
+        }
+        .banner-img {
+            margin-right: 39px;
+            img {
+                max-width: 500px;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+// Imports
+@import "variable.scss";
+@import "mixin.scss";
+// global typography
+html {
+	font-size: 100%;
+}
+*, :before, :after {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	outline: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300&display=swap');
+@import "../../../../node_modules/slick-carousel/slick/slick.css";
+@import "../../../../node_modules/slick-carousel/slick/slick-theme.css";
+body {
+	@include fontsize(14px);
+	font-family: $font-base;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+}
+// Global List Style
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: #fff;
+	transition: all 0.5s;
+	&:hover{
+		color: #F29100!important;
+	}
+}
+.container {
+    max-width: 1272px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+// Global Headings
+h1 {
+	@include fontsize(50px);
+	margin: 0;
+	color: $white;
+}
+h2 {
+	@include fontsize(50px);
+	margin: 0;
+	color: $white;
+}
+h3 {
+	margin: 0;
+	color: $white;
+	@include fontsize(20px);
+	@media all and (min-width:$screen-md) {
+		@include fontsize(30px);
+	}
+	@media all and (min-width:$screen-custom) {
+		@include fontsize(48px);
+		font-weight: $semi-bold;
+	}
+	@media all and (min-width:$screen-xxl) {
+		@include fontsize(50px);
+		font-weight: $semi-bold;
+	}
+}
+h4 {
+	color: $white;
+}
+h5 {
+	font-weight: 600;
+}
+p {
+	color: $white;
+	font-weight: $normal;
+	line-height: 1.5;
+	@media all and (min-width:$screen-custom) {
+		@include fontsize(15px);
+	}
+	@media all and (min-width:$screen-xxl) {
+		@include fontsize(16px);
+	}
+}
+.btn,
+button {
+	appearance: none;
+	-webkit-appearance: none;
+	outline: 0;
+	border-radius: 10px;
+	&:focus {
+		box-shadow: none;
+	}
+}
+.slick-next{
+	right: 0;
+	z-index: 999;
+	&::before{
+		display: none;
+	}
+	@include widthheight(30px,30px);
+	@include radius(50%);
+	background: url('../images/slick-next.svg') no-repeat center center!important;
+	background-size: contain;
+}
+.slick-prev{
+	left: 0;
+	z-index: 999;
+	background: url('../images/slick-prev.svg') no-repeat center center!important;
+	@include widthheight(30px,30px);
+	@include radius(50%);
+	background-size: contain;
+	&::before{
+		display: none;
+	}
+}
+// body {
+// 	 opacity: 0.8;
+//         background: url(../images/bg-img.png) no-repeat center top;
+// }
